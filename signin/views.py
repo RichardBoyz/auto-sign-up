@@ -10,6 +10,7 @@ def sign_in(request):
   """
   try:
     main()
-  except Exception:
+  except Exception as e:
+    print(e)
     return Response({'message':'fail'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
   return Response({'message':'success'},status=status.HTTP_201_CREATED)
